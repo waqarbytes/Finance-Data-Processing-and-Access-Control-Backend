@@ -15,12 +15,12 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 5001;
 
-// Ensure Prisma doesn't crash if .env is missing and DATABASE_URL is undefined
+// fallback if .env is missing
 if (!process.env.DATABASE_URL) {
   process.env.DATABASE_URL = 'file:./dev.db';
 }
 
-// Initialize Prisma 7 with SQLite Driver Adapter
+// setup prisma adapter
 const adapter = new PrismaBetterSqlite3({ url: 'file:./dev.db' });
 export const prisma = new PrismaClient({ adapter });
 
