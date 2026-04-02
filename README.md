@@ -2,6 +2,8 @@
 
 This is the backend service for the Finance Dashboard platform assignment. It's built entirely in Node.js with Express, TypeScript, and Prisma ORM.
 
+**🟢 Live API Demo:** [https://finance-data-processing-and-access-of6z.onrender.com/](https://finance-data-processing-and-access-of6z.onrender.com/)
+
 ## Tech Stack
 - **Node.js / Express**: Standard REST API routing
 - **TypeScript**: Type safety across controllers and middlewares
