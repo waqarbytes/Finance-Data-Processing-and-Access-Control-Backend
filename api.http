@@ -1,0 +1,57 @@
+@baseUrl = http://localhost:3000/api
+@token = YOUR_TOKEN_HERE
+
+### 1. Register User
+POST {{baseUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123",
+  "role": "ADMIN"
+}
+
+### 2. Login User
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "john@example.com",
+  "password": "password123"
+}
+
+### 3. Get Current User Profil
+GET {{baseUrl}}/auth/me
+Authorization: Bearer {{token}}
+
+### 4. Create Income Transaction
+POST {{baseUrl}}/transactions
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "amount": 5000,
+  "type": "INCOME",
+  "category": "Salary",
+  "description": "Monthly Salary"
+}
+
+### 5. Create Expense Transaction
+POST {{baseUrl}}/transactions
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "amount": 120,
+  "type": "EXPENSE",
+  "category": "Groceries"
+}
+
+### 6. Get All Transactions
+GET {{baseUrl}}/transactions
+Authorization: Bearer {{token}}
+
+### 7. Get Dashboard Summary
+GET {{baseUrl}}/dashboard/summary
+Authorization: Bearer {{token}}
